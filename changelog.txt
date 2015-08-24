@@ -1,0 +1,47 @@
+-------------------------------------------------
+## 0004
+2015-08-25 15:40
+
++ changed TripPlan store() method to account for user timezone (captured via moment.js)
++ added user's UTC offset to trip_plans table
++ changed missedTrips() method to construct notifyTime using user's UTC offset
++ solved issue of missed trip notifications being resent every 5 minutes (added notified boolean to trip_plans table)
+
+-------------------------------------------------
+## 0003
+2015-08-20 17:15
+
++ created trip_plans table
++ created TripPlansController
++ created TripPlan model
++ created Trip Plan CRUD utility
++ modified /trips (index) to show active trip
++ added eonasdan/datetimepicker for better datepicker controls
++ created checkin/checkout functionality
++ created CRON task to monitor missed check outs
++ set up logic to notify ECs when user missed check out
+!! I HAVE NOT ACCOUNTED FOR TIME ZONES. MUST FIX IMMEDIATELY !!
+
+-------------------------------------------------
+## 0002
+2015-08-12 16:20
+
++ created emergency_contacts table
++ created EmergencyContactsController
++ created EmergencyContact model
++ created Emergency Contact CRUD utility
++ set up EC accept/decline notifications
++ created methods to handle EC accept/decline
++ set cron task to remove non-responsive EC info
++ added user notifications for EC accept/decline
+
+-------------------------------------------------
+## 0001
+2015-07-31 14:45
+
++ project stubbed out
++ switched LESS for SCSS
++ brought in bootstrap-sass, fontawesome
++ modified user model to hold separate first name/last name
++ modified registration to store separate first name/last name
++ moved login menu link to modal window

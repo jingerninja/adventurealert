@@ -1,0 +1,54 @@
+/* Now we can use SASS and do fun things 
+	like create variables and then use them in CSS!
+
+** EXAMPLE **
+
+$grey: #f3f3f3;
+$fancy-border: 6px dashed $grey;
+
+.panel-body {
+	border: $fancy-border;
+}
+
+*/
+
+//override default variables
+$font-family-sans-serif:  "Roboto", Helvetica, Arial, sans-serif !default;
+
+//custom variables
+$font-exo: "Exo", Arial, sans-serif;
+$red: #E21A1A;
+
+//import bootstrap stuff
+@import 'bootstrap';
+
+.navbar-header .navbar-brand {
+	font-family: $font-exo;
+	font-weight: 900;
+	font-style: italic;
+	font-size: 2.2em;
+	color: $red;
+}
+.navbar-header .navbar-brand:hover {
+	color: #333;
+}
+
+.panel-title {
+	font-size: 20px;
+}
+
+ul.context-menu {
+	right: 0;
+	left: inherit;
+	min-width: 60px;
+	padding: 0;
+	text-align: center;
+}
+.contact_name, .contact_email, .contact_phone {
+	font-size: 16px;
+}
+
+.modal-header.alert-danger {
+    border-top-left-radius: inherit; 
+    border-top-right-radius: inherit;
+}

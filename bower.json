@@ -1,0 +1,22 @@
+{
+  "name": "Adventure Alert",
+  "version": "0.0.1",
+  "description": "Web Portal and API for AdventureAlert app",
+  "authors": [
+    "Josh Norwich"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.5",
+    "fontawesome": "~4.4.0",
+    "bourbon": "~4.2.3",
+    "eonasdan-bootstrap-datetimepicker": "~4.15.35"
+  }
+}
