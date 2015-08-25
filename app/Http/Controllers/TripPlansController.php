@@ -148,6 +148,8 @@ class TripPlansController extends Controller {
 	{
 		$trip = TripPlan::find($id);
 		$trip->active = 1;
+		$trip->checkIn_lat = $_POST['checkIn_lat'];
+		$trip->checkIn_long = $_POST['checkIn_long'];
 		if($trip->save())
 		{
 			return redirect('/trips')->with([

@@ -1,6 +1,16 @@
 -------------------------------------------------
+## 0005
+2015-08-25 11:50
+
++ attached Check In button to form
++ added hidden fields for user's geolocation
++ wrote logic to store check in lat/long to database
++ added formatted Google Maps URL to notification email
+?? Any sense in repeating this for checkout ??
+
+-------------------------------------------------
 ## 0004
-2015-08-25 15:40
+2015-08-24 15:40
 
 + changed TripPlan store() method to account for user timezone (captured via moment.js)
 + added user's UTC offset to trip_plans table

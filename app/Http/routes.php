@@ -29,7 +29,7 @@ Route::group(['middleware' => 'auth'], function()
 	//emergency contact management
 	Route::resource('contacts', 'EmergencyContactsController');
 	//trip management
-	Route::get('trips/{trips}/checkin', 'TripPlansController@checkIn');
+	Route::post('trips/{trips}/checkin', 'TripPlansController@checkIn');
 	Route::get('trips/{trips}/checkout', 'TripPlansController@checkOut');
 	//TEST ROUTE
 	Route::get('trips/missed', 'TripPlansController@missedTrips');

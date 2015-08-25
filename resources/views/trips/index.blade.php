@@ -57,7 +57,11 @@
 												<div class="col-sm-4">
 													{{-- Display check in when trip inactive, display check out when trip active? --}}
 													@if($trip->active == 0)
-														<a href="/trips/{{$trip->id}}/checkin" class="btn btn-success btn-checkin">Check In</a>
+														{!! Form::open(['url' => '/trips/'.$trip->id.'/checkin', 'id' => 'trip'.$trip->id.'_checkin']) !!}
+															{!! Form::hidden('checkIn_lat', null, ['class' => 'checkIn_lat']) !!}
+															{!! Form::hidden('checkIn_long', null, ['class' => 'checkIn_long']) !!}
+															<button class="btn btn-success btn-checkin" type="submit" form="trip{{$trip->id}}_checkin">Check In</button>
+														{!! Form::close() !!}
 													@elseif($trip->active == 1)
 														<a href="/trips/{{$trip->id}}/checkout" class="btn btn-success btn-checkout">Check Out</a>
 													@endif
@@ -159,6 +163,42 @@
 				});
 			})
 		});
+
+		//if geolocation supported
+	    if (navigator.geolocation) 
+	    {
+	    	//fetch lat and long
+	        navigator.geolocation.getCurrentPosition(showPosition, showError);
+	    } 
+	    else 
+	    {
+	        console.log("Geolocation is not supported by this browser.");
+	    }
+	    //use position for checkin
+		function showPosition(position) {
+		    var latitude = position.coords.latitude;
+		    var longitude = position.coords.longitude;
+
+		    $('.checkIn_lat').val(latitude);
+		    $('.checkIn_long').val(longitude);
+		}
+		//handle geolocation errors
+		function showError(error) {
+		    switch(error.code) {
+		        case error.PERMISSION_DENIED:
+		            console.log("User denied the request for Geolocation.")
+		            break;
+		        case error.POSITION_UNAVAILABLE:
+		            console.log("Location information is unavailable.")
+		            break;
+		        case error.TIMEOUT:
+		            console.log("The request to get user location timed out.")
+		            break;
+		        case error.UNKNOWN_ERROR:
+		            console.log("An unknown error occurred.")
+		            break;
+		    }
+		}
 	</script>
 
 @endsection

@@ -21,6 +21,8 @@ Our first recommendation is that you attempt to get ahold of {{ $user->first_nam
 
 ## HELPFUL SAR RESOURCES ##
 
+According to our records, {{ $user->first_name }} checked in to their trip from the following location: http://maps.google.com/maps?z=12&t=h&q=loc:{{ $trip->checkIn_lat }}+{{ $trip->checkIn_long }}
+
 Thank you,
 
 The AdventureAlert Team
